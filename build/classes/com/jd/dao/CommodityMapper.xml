@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.dao.CommodityDao">
+	<resultMap id="BaseResultMap" type="com.jd.entity.Commodity">
+		<id column="COMID" jdbcType="DECIMAL" property="COMID" />
+		<result column="COMNAME" jdbcType="VARCHAR" property="COMNAME" />
+		<result column="COMNNAME" jdbcType="VARCHAR" property="COMNNAME" />
+		<result column="KINDSID" jdbcType="DECIMAL" property="KINDSID" />
+		<result column="PRICE" jdbcType="DECIMAL" property="PRICE" />
+		<result column="AMOUNT" jdbcType="DECIMAL" property="AMOUNT" />
+		<result column="DESCRIBE" jdbcType="VARCHAR" property="DESCRIBE" />
+		<result column="SALEMSG" jdbcType="VARCHAR" property="SALEMSG" />
+		<result column="SALEAMOUNT" jdbcType="DECIMAL" property="SALEAMOUNT" />
+		<result column="IMG" jdbcType="VARCHAR" property="IMG" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		COMID, COMNAME, COMNNAME, KINDSID, PRICE, AMOUNT, DESCRIBE,
+		SALEMSG,
+		SALEAMOUNT,IMG
+	</sql>
+
+	<select id="selectByContent" parameterType="String" resultMap="BaseResultMap">
+		select * from JD_COMMODITY
+		where COM_NAME like '%表%'
+	</select>
+
+	<select id="searchall" parameterType="com.jd.entity.Commodity"
+		resultMap="BaseResultMap">
+		select
+		COMID,IMG,COMNAME,PRICE
+		from JD_COMMODITY
+	</select>
+
+
+	<select id="search" parameterType="com.jd.entity.Commodity"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from JD_COMMODITY
+		where COMNAME like '%${COMNAME}%'
+	</select>
+
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from JD_COMMODITY
+		where COMID = #{COMID,jdbcType=DECIMAL}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from
+		JD_COMMODITY
+		where COMID = #{COMID,jdbcType=DECIMAL}
+	</delete>
+	<insert id="insert" parameterType="com.jd.entity.Commodity">
+		insert into JD_COMMODITY
+		(COMID, COMNAME, COMNNAME,
+		KINDSID, PRICE, AMOUNT,
+		DESCRIBE, SALEMSG,
+		SALEAMOUNT,
+		IMG)
+		values (#{COMID,jdbcType=DECIMAL},
+		#{COMNAME,jdbcType=VARCHAR},
+		#{COMNNAME,jdbcType=VARCHAR},
+		#{KINDSID,jdbcType=DECIMAL}, #{PRICE,jdbcType=DECIMAL},
+		#{AMOUNT,jdbcType=DECIMAL},
+		#{DESCRIBE,jdbcType=VARCHAR},
+		#{SALEMSG,jdbcType=VARCHAR},
+		#{SALEAMOUNT,jdbcType=DECIMAL},
+		#{IMG,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.jd.entity.Commodity">
+		insert into JD_COMMODITY
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="COMID != null">
+				COMID,
+			</if>
+			<if test="COMNAME != null">
+				COMNAME,
+			</if>
+			<if test="COMNNAME != null">
+				COMNNAME,
+			</if>
+			<if test="KINDSID != null">
+				KINDSID,
+			</if>
+			<if test="PRICE != null">
+				PRICE,
+			</if>
+			<if test="AMOUNT != null">
+				AMOUNT,
+			</if>
+			<if test="DESCRIBE != null">
+				DESCRIBE,
+			</if>
+			<if test="SALEMSG != null">
+				SALEMSG,
+			</if>
+			<if test="SALEAMOUNT != null">
+				SALEAMOUNT,
+			</if>
+			<if test="IMG != null">
+				IMG,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="COMID != null">
+				#{COMID,jdbcType=DECIMAL},
+			</if>
+			<if test="COMNAME != null">
+				#{COMNAME,jdbcType=VARCHAR},
+			</if>
+			<if test="COMNNAME != null">
+				#{COMNNAME,jdbcType=VARCHAR},
+			</if>
+			<if test="KINDSID != null">
+				#{KINDSID,jdbcType=DECIMAL},
+			</if>
+			<if test="PRICE != null">
+				#{PRICE,jdbcType=DECIMAL},
+			</if>
+			<if test="AMOUNT != null">
+				#{AMOUNT,jdbcType=DECIMAL},
+			</if>
+			<if test="DESCRIBE != null">
+				#{DESCRIBE,jdbcType=VARCHAR},
+			</if>
+			<if test="SALEMSG != null">
+				#{SALEMSG,jdbcType=VARCHAR},
+			</if>
+			<if test="SALEAMOUNT != null">
+				#{SALEAMOUNT,jdbcType=DECIMAL},
+			</if>
+			<if test="IMG != null">
+				#{IMG,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.jd.entity.Commodity">
+		update JD_COMMODITY
+		<set>
+			<if test="COMNAME != null">
+				COMNAME = #{COMNAME,jdbcType=VARCHAR},
+			</if>
+			<if test="COMNNAME != null">
+				COMNNAME = #{COMNNAME,jdbcType=VARCHAR},
+			</if>
+			<if test="KINDSID != null">
+				KINDSID = #{KINDSID,jdbcType=DECIMAL},
+			</if>
+			<if test="PRICE != null">
+				PRICE = #{PRICE,jdbcType=DECIMAL},
+			</if>
+			<if test="AMOUNT != null">
+				AMOUNT = #{AMOUNT,jdbcType=DECIMAL},
+			</if>
+			<if test="DESCRIBE != null">
+				DESCRIBE = #{DESCRIBE,jdbcType=VARCHAR},
+			</if>
+			<if test="SALEMSG != null">
+				SALEMSG = #{SALEMSG,jdbcType=VARCHAR},
+			</if>
+			<if test="SALEAMOUNT != null">
+				SALEAMOUNT = #{SALEAMOUNT,jdbcType=DECIMAL},
+			</if>
+			<if test="IMG != null">
+				IMG = #{IMG,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where COMID = #{COMID,jdbcType=DECIMAL}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.jd.entity.Commodity">
+		update
+		JD_COMMODITY
+		set COMNAME = #{COMNAME,jdbcType=VARCHAR},
+		COMNNAME =
+		#{COMNNAME,jdbcType=VARCHAR},
+		KINDSID = #{KINDSID,jdbcType=DECIMAL},
+		PRICE = #{PRICE,jdbcType=DECIMAL},
+		AMOUNT = #{AMOUNT,jdbcType=DECIMAL},
+		DESCRIBE = #{DESCRIBE,jdbcType=VARCHAR},
+		SALEMSG =
+		#{SALEMSG,jdbcType=VARCHAR},
+		SALEAMOUNT =
+		#{SALEAMOUNT,jdbcType=DECIMAL},
+		IMG = #{IMG,jdbcType=VARCHAR}
+		where
+		COMID = #{COMID,jdbcType=DECIMAL}
+	</update>
+</mapper>

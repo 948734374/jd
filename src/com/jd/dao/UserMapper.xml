@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.dao.UserDao">
+	<resultMap id="BaseResultMap" type="com.jd.entity.User">
+		<id column="USERID" jdbcType="DECIMAL" property="USERID" />
+		<result column="USERNAME" jdbcType="VARCHAR" property="USERNAME" />
+		<result column="PASSWORD" jdbcType="VARCHAR" property="PASSWORD" />
+		<result column="TELEPHONE" jdbcType="VARCHAR" property="TELEPHONE" />
+		<result column="EMAIL" jdbcType="VARCHAR" property="EMAIL" />
+		<result column="HEADPIC" jdbcType="VARCHAR" property="HEADPIC" />
+		<result column="LOCKED" jdbcType="VARCHAR" property="LOCKED" />
+		<result column="VIP" jdbcType="VARCHAR" property="VIP" />
+		<result column="REGISTTIME" jdbcType="DATE" property="REGISTTIME" />
+		<result column="BALANCE" jdbcType="DECIMAL" property="BALANCE" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		USERID, USERNAME, PASSWORD, TELEPHONE, EMAIL, HEADPIC,
+		LOCKED, VIP,
+		REGISTTIME, BALANCE
+	</sql>
+
+	<select id="login" parameterType="com.jd.entity.User" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from JD_USER
+		where USERNAME = #{USERNAME,jdbcType=VARCHAR} AND
+		PASSWORD=#{PASSWORD,jdbcType=VARCHAR}
+	</select>
+
+	<select id="selectByUsername" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from JD_USER
+		where USERNAME = #{USERNAME,jdbcType=DECIMAL}
+	</select>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from JD_USER
+		where USERID = #{USERID,jdbcType=DECIMAL}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from
+		JD_USER
+		where USERID = #{USERID,jdbcType=DECIMAL}
+	</delete>
+	<insert id="insert" parameterType="com.jd.entity.User">
+		insert into JD_USER (USERID,
+		USERNAME, PASSWORD,
+		TELEPHONE, EMAIL, HEADPIC,
+		LOCKED, VIP, REGISTTIME,
+		BALANCE)
+		values (#{USERID,jdbcType=DECIMAL},
+		#{USERNAME,jdbcType=VARCHAR},
+		#{PASSWORD,jdbcType=VARCHAR},
+		#{TELEPHONE,jdbcType=VARCHAR}, #{EMAIL,jdbcType=VARCHAR},
+		#{HEADPIC,jdbcType=VARCHAR},
+		#{LOCKED,jdbcType=VARCHAR},
+		#{VIP,jdbcType=VARCHAR},
+		#{REGISTTIME,jdbcType=DATE},
+		#{BALANCE,jdbcType=DECIMAL})
+	</insert>
+	<insert id="insertSelective" parameterType="com.jd.entity.User">
+		insert into JD_USER
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="USERID != null">
+				USERID,
+			</if>
+			<if test="USERNAME != null">
+				USERNAME,
+			</if>
+			<if test="PASSWORD != null">
+				PASSWORD,
+			</if>
+			<if test="TELEPHONE != null">
+				TELEPHONE,
+			</if>
+			<if test="EMAIL != null">
+				EMAIL,
+			</if>
+			<if test="HEADPIC != null">
+				HEADPIC,
+			</if>
+			<if test="LOCKED != null">
+				LOCKED,
+			</if>
+			<if test="VIP != null">
+				VIP,
+			</if>
+			<if test="REGISTTIME != null">
+				REGISTTIME,
+			</if>
+			<if test="BALANCE != null">
+				BALANCE,
+			</if>
+		</trim>
+		<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+			<if test="USERID != null">
+				#{USERID,jdbcType=DECIMAL},
+			</if>
+			<if test="USERNAME != null">
+				#{USERNAME,jdbcType=VARCHAR},
+			</if>
+			<if test="PASSWORD != null">
+				#{PASSWORD,jdbcType=VARCHAR},
+			</if>
+			<if test="TELEPHONE != null">
+				#{TELEPHONE,jdbcType=VARCHAR},
+			</if>
+			<if test="EMAIL != null">
+				#{EMAIL,jdbcType=VARCHAR},
+			</if>
+			<if test="HEADPIC != null">
+				#{HEADPIC,jdbcType=VARCHAR},
+			</if>
+			<if test="LOCKED != null">
+				#{LOCKED,jdbcType=VARCHAR},
+			</if>
+			<if test="VIP != null">
+				#{VIP,jdbcType=VARCHAR},
+			</if>
+			<if test="REGISTTIME != null">
+				#{REGISTTIME,jdbcType=DATE},
+			</if>
+			<if test="BALANCE != null">
+				#{BALANCE,jdbcType=DECIMAL},
+			</if>
+		</trim>
+		<!-- <selectKey keyProperty="USERID" resultType="long" order="AFTER"> select 
+			seq_user_id.currval from dual </selectKey> -->
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.jd.entity.User">
+		update JD_USER
+		<set>
+			<if test="USERNAME != null">
+				USERNAME = #{USERNAME,jdbcType=VARCHAR},
+			</if>
+			<if test="PASSWORD != null">
+				PASSWORD = #{PASSWORD,jdbcType=VARCHAR},
+			</if>
+			<if test="TELEPHONE != null">
+				TELEPHONE = #{TELEPHONE,jdbcType=VARCHAR},
+			</if>
+			<if test="EMAIL != null">
+				EMAIL = #{EMAIL,jdbcType=VARCHAR},
+			</if>
+			<if test="HEADPIC != null">
+				HEADPIC = #{HEADPIC,jdbcType=VARCHAR},
+			</if>
+			<if test="LOCKED != null">
+				LOCKED = #{LOCKED,jdbcType=VARCHAR},
+			</if>
+			<if test="VIP != null">
+				VIP = #{VIP,jdbcType=VARCHAR},
+			</if>
+			<if test="REGISTTIME != null">
+				REGISTTIME = #{REGISTTIME,jdbcType=DATE},
+			</if>
+			<if test="BALANCE != null">
+				BALANCE = #{BALANCE,jdbcType=DECIMAL},
+			</if>
+		</set>
+		where USERID = #{USERID,jdbcType=DECIMAL}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.jd.entity.User">
+		update JD_USER
+		set
+		USERNAME = #{USERNAME,jdbcType=VARCHAR},
+		PASSWORD =
+		#{PASSWORD,jdbcType=VARCHAR},
+		TELEPHONE =
+		#{TELEPHONE,jdbcType=VARCHAR},
+		EMAIL = #{EMAIL,jdbcType=VARCHAR},
+		HEADPIC = #{HEADPIC,jdbcType=VARCHAR},
+		LOCKED =
+		#{LOCKED,jdbcType=VARCHAR},
+		VIP = #{VIP,jdbcType=VARCHAR},
+		REGISTTIME =
+		#{REGISTTIME,jdbcType=DATE},
+		BALANCE = #{BALANCE,jdbcType=DECIMAL}
+		where USERID = #{USERID,jdbcType=DECIMAL}
+	</update>
+</mapper>

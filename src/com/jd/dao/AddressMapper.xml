@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.dao.AddressDao">
+  <resultMap id="BaseResultMap" type="com.jd.entity.Address">
+    <id column="ADDRID" jdbcType="DECIMAL" property="ADDRID" />
+    <result column="USERID" jdbcType="DECIMAL" property="USERID" />
+    <result column="PROVINCE" jdbcType="VARCHAR" property="PROVINCE" />
+    <result column="CITY" jdbcType="VARCHAR" property="CITY" />
+    <result column="ADDR" jdbcType="VARCHAR" property="ADDR" />
+    <result column="CONSIGNEE" jdbcType="VARCHAR" property="CONSIGNEE" />
+    <result column="CONTACT" jdbcType="VARCHAR" property="CONTACT" />
+    <result column="CONTY" jdbcType="VARCHAR" property="CONTY" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ADDRID, USERID, PROVINCE, CITY, ADDR, CONSIGNEE, CONTACT, CONTY
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from JD_ADDRESS
+    where ADDRID = #{ADDRID,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from JD_ADDRESS
+    where ADDRID = #{ADDRID,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.jd.entity.Address">
+    insert into JD_ADDRESS (ADDRID, USERID, PROVINCE, 
+      CITY, ADDR, CONSIGNEE, 
+      CONTACT, CONTY)
+    values (#{ADDRID,jdbcType=DECIMAL}, #{USERID,jdbcType=DECIMAL}, #{PROVINCE,jdbcType=VARCHAR}, 
+      #{CITY,jdbcType=VARCHAR}, #{ADDR,jdbcType=VARCHAR}, #{CONSIGNEE,jdbcType=VARCHAR}, 
+      #{CONTACT,jdbcType=VARCHAR}, #{CONTY,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jd.entity.Address">
+    insert into JD_ADDRESS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ADDRID != null">
+        ADDRID,
+      </if>
+      <if test="USERID != null">
+        USERID,
+      </if>
+      <if test="PROVINCE != null">
+        PROVINCE,
+      </if>
+      <if test="CITY != null">
+        CITY,
+      </if>
+      <if test="ADDR != null">
+        ADDR,
+      </if>
+      <if test="CONSIGNEE != null">
+        CONSIGNEE,
+      </if>
+      <if test="CONTACT != null">
+        CONTACT,
+      </if>
+      <if test="CONTY != null">
+        CONTY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ADDRID != null">
+        #{ADDRID,jdbcType=DECIMAL},
+      </if>
+      <if test="USERID != null">
+        #{USERID,jdbcType=DECIMAL},
+      </if>
+      <if test="PROVINCE != null">
+        #{PROVINCE,jdbcType=VARCHAR},
+      </if>
+      <if test="CITY != null">
+        #{CITY,jdbcType=VARCHAR},
+      </if>
+      <if test="ADDR != null">
+        #{ADDR,jdbcType=VARCHAR},
+      </if>
+      <if test="CONSIGNEE != null">
+        #{CONSIGNEE,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTACT != null">
+        #{CONTACT,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTY != null">
+        #{CONTY,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jd.entity.Address">
+    update JD_ADDRESS
+    <set>
+      <if test="USERID != null">
+        USERID = #{USERID,jdbcType=DECIMAL},
+      </if>
+      <if test="PROVINCE != null">
+        PROVINCE = #{PROVINCE,jdbcType=VARCHAR},
+      </if>
+      <if test="CITY != null">
+        CITY = #{CITY,jdbcType=VARCHAR},
+      </if>
+      <if test="ADDR != null">
+        ADDR = #{ADDR,jdbcType=VARCHAR},
+      </if>
+      <if test="CONSIGNEE != null">
+        CONSIGNEE = #{CONSIGNEE,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTACT != null">
+        CONTACT = #{CONTACT,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTY != null">
+        CONTY = #{CONTY,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ADDRID = #{ADDRID,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jd.entity.Address">
+    update JD_ADDRESS
+    set USERID = #{USERID,jdbcType=DECIMAL},
+      PROVINCE = #{PROVINCE,jdbcType=VARCHAR},
+      CITY = #{CITY,jdbcType=VARCHAR},
+      ADDR = #{ADDR,jdbcType=VARCHAR},
+      CONSIGNEE = #{CONSIGNEE,jdbcType=VARCHAR},
+      CONTACT = #{CONTACT,jdbcType=VARCHAR},
+      CONTY = #{CONTY,jdbcType=VARCHAR}
+    where ADDRID = #{ADDRID,jdbcType=DECIMAL}
+  </update>
+</mapper>

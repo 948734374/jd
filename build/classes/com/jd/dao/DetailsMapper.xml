@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.dao.DetailsDao">
+  <resultMap id="DetailsResultMap" type="com.jd.entity.Details">
+    <id column="DETAILSID" jdbcType="DECIMAL" property="DETAILSID" />
+    <result column="TRADENO" jdbcType="DECIMAL" property="TRADENO" />
+    <result column="COMID" jdbcType="DECIMAL" property="COMID" />
+    <result column="AMOUNT" jdbcType="DECIMAL" property="AMOUNT" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    DETAILSID, TRADENO, COMID, AMOUNT
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="DetailsResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from JD_DETAILS
+    where DETAILSID = #{DETAILSID,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from JD_DETAILS
+    where DETAILSID = #{DETAILSID,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.jd.entity.Details">
+    insert into JD_DETAILS (DETAILSID, TRADENO, COMID, 
+      AMOUNT)
+    values (#{DETAILSID,jdbcType=DECIMAL}, #{TRADENO,jdbcType=DECIMAL}, #{COMID,jdbcType=DECIMAL}, 
+      #{AMOUNT,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jd.entity.Details">
+    insert into JD_DETAILS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="DETAILSID != null">
+        DETAILSID,
+      </if>
+      <if test="TRADENO != null">
+        TRADENO,
+      </if>
+      <if test="COMID != null">
+        COMID,
+      </if>
+      <if test="AMOUNT != null">
+        AMOUNT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="DETAILSID != null">
+        #{DETAILSID,jdbcType=DECIMAL},
+      </if>
+      <if test="TRADENO != null">
+        #{TRADENO,jdbcType=DECIMAL},
+      </if>
+      <if test="COMID != null">
+        #{COMID,jdbcType=DECIMAL},
+      </if>
+      <if test="AMOUNT != null">
+        #{AMOUNT,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jd.entity.Details">
+    update JD_DETAILS
+    <set>
+      <if test="TRADENO != null">
+        TRADENO = #{TRADENO,jdbcType=DECIMAL},
+      </if>
+      <if test="COMID != null">
+        COMID = #{COMID,jdbcType=DECIMAL},
+      </if>
+      <if test="AMOUNT != null">
+        AMOUNT = #{AMOUNT,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where DETAILSID = #{DETAILSID,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jd.entity.Details">
+    update JD_DETAILS
+    set TRADENO = #{TRADENO,jdbcType=DECIMAL},
+      COMID = #{COMID,jdbcType=DECIMAL},
+      AMOUNT = #{AMOUNT,jdbcType=DECIMAL}
+    where DETAILSID = #{DETAILSID,jdbcType=DECIMAL}
+  </update>
+</mapper>

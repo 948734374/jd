@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.dao.RecoredDao">
+  <resultMap id="BaseResultMap" type="com.jd.entity.Recored">
+    <id column="RECORDID" jdbcType="DECIMAL" property="RECORDID" />
+    <result column="USERID" jdbcType="DECIMAL" property="USERID" />
+    <result column="TRADETIME" jdbcType="DATE" property="TRADETIME" />
+    <result column="TRADETYPE" jdbcType="VARCHAR" property="TRADETYPE" />
+    <result column="TRADEAMOUNT" jdbcType="DECIMAL" property="TRADEAMOUNT" />
+    <result column="TRADENUM" jdbcType="DECIMAL" property="TRADENUM" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    RECORDID, USERID, TRADETIME, TRADETYPE, TRADEAMOUNT, TRADENUM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from JD_RECORD
+    where RECORDID = #{RECORDID,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from JD_RECORD
+    where RECORDID = #{RECORDID,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.jd.entity.Recored">
+    insert into JD_RECORD (RECORDID, USERID, TRADETIME, 
+      TRADETYPE, TRADEAMOUNT, TRADENUM
+      )
+    values (#{RECORDID,jdbcType=DECIMAL}, #{USERID,jdbcType=DECIMAL}, #{TRADETIME,jdbcType=DATE}, 
+      #{TRADETYPE,jdbcType=VARCHAR}, #{TRADEAMOUNT,jdbcType=DECIMAL}, #{TRADENUM,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jd.entity.Recored">
+    insert into JD_RECORD
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="RECORDID != null">
+        RECORDID,
+      </if>
+      <if test="USERID != null">
+        USERID,
+      </if>
+      <if test="TRADETIME != null">
+        TRADETIME,
+      </if>
+      <if test="TRADETYPE != null">
+        TRADETYPE,
+      </if>
+      <if test="TRADEAMOUNT != null">
+        TRADEAMOUNT,
+      </if>
+      <if test="TRADENUM != null">
+        TRADENUM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="RECORDID != null">
+        #{RECORDID,jdbcType=DECIMAL},
+      </if>
+      <if test="USERID != null">
+        #{USERID,jdbcType=DECIMAL},
+      </if>
+      <if test="TRADETIME != null">
+        #{TRADETIME,jdbcType=DATE},
+      </if>
+      <if test="TRADETYPE != null">
+        #{TRADETYPE,jdbcType=VARCHAR},
+      </if>
+      <if test="TRADEAMOUNT != null">
+        #{TRADEAMOUNT,jdbcType=DECIMAL},
+      </if>
+      <if test="TRADENUM != null">
+        #{TRADENUM,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jd.entity.Recored">
+    update JD_RECORD
+    <set>
+      <if test="USERID != null">
+        USERID = #{USERID,jdbcType=DECIMAL},
+      </if>
+      <if test="TRADETIME != null">
+        TRADETIME = #{TRADETIME,jdbcType=DATE},
+      </if>
+      <if test="TRADETYPE != null">
+        TRADETYPE = #{TRADETYPE,jdbcType=VARCHAR},
+      </if>
+      <if test="TRADEAMOUNT != null">
+        TRADEAMOUNT = #{TRADEAMOUNT,jdbcType=DECIMAL},
+      </if>
+      <if test="TRADENUM != null">
+        TRADENUM = #{TRADENUM,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where RECORDID = #{RECORDID,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jd.entity.Recored">
+    update JD_RECORD
+    set USERID = #{USERID,jdbcType=DECIMAL},
+      TRADETIME = #{TRADETIME,jdbcType=DATE},
+      TRADETYPE = #{TRADETYPE,jdbcType=VARCHAR},
+      TRADEAMOUNT = #{TRADEAMOUNT,jdbcType=DECIMAL},
+      TRADENUM = #{TRADENUM,jdbcType=DECIMAL}
+    where RECORDID = #{RECORDID,jdbcType=DECIMAL}
+  </update>
+</mapper>

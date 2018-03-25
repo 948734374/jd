@@ -1,0 +1,355 @@
+body, div, p, ul, li, dd, dl, dt, hr, i, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+ul, ol {
+    list-style: none
+}
+
+#container {
+    width: 1532px;
+    height: 669px;
+
+    background-color: white;
+}
+
+#head {
+    width: 990px;
+    height: 60px;;
+    margin: 0 auto;
+    background-color: white;
+}
+
+#head-logo {
+    position: relative;
+    width: 300px;
+    margin: 10px 0 0;
+    height: 60px;
+}
+
+#head-logo b {
+    display: block;
+    width: 110px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    background: url("../img/l-icon.png") no-repeat;
+}
+
+#body {
+    width: 1532px;
+    height: 475px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #e93854;
+}
+
+#body-middle {
+    width: 990px;
+    height: 475px;
+    margin: 0 auto;
+
+}
+
+#back {
+    height: 475px;
+    background: url("../img/back.png") 0px 0px no-repeat;
+    background-color: red;
+}
+
+.loginform {
+    position: relative;
+    z-index: 4;
+    background: #fff;
+    overflow: visible;
+    width: 346px;
+    height: 369px;
+    float: right;
+    background-color: white;
+    margin-top: 40px;
+}
+
+.loginform .loginform1 {
+    width: 173px;
+    height: 54px;
+    float: left;
+}
+
+.loginform .loginform2 {
+    width: 172px;
+    height: 54px;
+    float: left;
+
+}
+
+.loginform .loginform1 a {
+    font-size: 18px;
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+    text-align: center;
+    border-bottom: 1px solid #f4f4f4;
+    position: absolute;
+    background: #fff;
+    display: block;
+    line-height: 54px;
+    margin-left: 40px;
+
+}
+
+.loginform .loginform2 a {
+    font-size: 18px;
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+    text-align: center;
+    border-bottom: 1px solid #f4f4f4;
+    position: absolute;
+    background: #fff;
+    display: block;
+    line-height: 54px;
+    margin-left: 40px;
+
+}
+
+#bottom {
+    width: 1532px;
+    height: 104px;
+}
+
+#w {
+    height: 18px;
+    width: 990px;
+    margin: 0px auto;
+}
+
+#w a {
+    text-decoration: none;
+    margin-left: 80%;
+    font-size: 12px;
+    color: #6A6A6A;
+}
+
+#w a b {
+    display: inline-block;
+    width: 18px;
+    height: 14px;
+    margin: 0 5px;
+    background: url("../img/q-icon.png") no-reeat;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.q a {
+    text-decoration: none;
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.q {
+    height: 18px;
+    width: 990px;
+    margin: 0px auto;
+    tab-size: 12px;
+}
+
+.q hr {
+    border: 1px #B1191A solid;
+
+}
+
+li {
+    float: left;
+    margin: 0 10px;
+}
+
+li.spacer {
+    width: 1px;
+    height: 18px;
+    padding: 0;
+    background: #ddd;
+    overflow: hidden;
+
+}
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+    color: #666;
+    background: #fff;
+}
+
+.copyright {
+    margin-left: 30%;
+}
+
+#b-t {
+    height: 55px;
+    width: 345px;
+
+}
+
+#worn {
+    margin: 10px 20px;
+    line-height: 31px;
+    background-color: #fff6d2;
+    height: 31px;
+    width: 306px;
+    border: 1px solid #ffe57d
+
+}
+
+#worn b {
+    margin-top: 5px;
+    margin-left: 10px;
+
+    display: block;
+    width: 16px;
+    height: 17px;
+    overflow: hidden;
+    background: url("../img/small.png") 20px -21px;
+    float: left;
+}
+
+#left {
+    margin-left: 40px;
+    line-height: 33px;
+
+}
+
+#mc {
+    margin: 0 auto;
+    width: 306px;
+    height: 188px;
+}
+
+#text1 {
+    margin-top: 10px;
+    height: 38px;
+}
+
+#text1 b {
+    height: 38px;
+    width: 39px;
+    overflow: hidden;
+    background: url("../img/small.png");
+    float: left;
+}
+
+.input1 {
+    height: 30px;
+    width: 260px;
+}
+
+#text2 {
+    margin-top: 20px;
+    height: 38px;
+}
+
+#text2 b {
+    height: 38px;
+    width: 39px;
+    overflow: hidden;
+    background: url("../img/small.png") -48px 0px;
+    float: left;
+}
+
+#safe {
+    margin-top: 20px;
+    height: 18px;
+}
+
+.input2 {
+    float: left;
+}
+
+.p {
+    float: right
+}
+
+.p.p1 {
+    margin-right: 280px;
+}
+
+#loginlogo {
+    margin-top: 20px;
+    height: 35px;
+    border: 1px solid #cb2a2d;
+    background: #e4393c;
+}
+
+#loginlogo input {
+	margin-top:0px;
+    margin-left: 130px;
+    background: #e4393c;
+    height: 35px;
+    line-height: 37px;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Microsoft YaHei';
+    border: 0px;
+}
+
+#ul {
+    margin-top: 23px;
+    height: 51px;
+    width: 60%;
+    background-color: white;
+    float: left;
+}
+
+#li {
+    margin-left: 19px;
+    padding: 15px 0px;
+    float: left;
+    width: 167px;
+    height: 50px;
+
+}
+
+.li {
+    float: left;
+}
+
+#x {
+    float: left;
+    height: 18px;
+    width: 40%;
+    margin-top: 38px;
+
+}
+
+#x b {
+    height: 18px;
+    width: 19px;
+    overflow: hidden;
+    background: url("../img/small.png") -104px -75px;
+    float: left;
+}
+
+#x p {
+    color: red;
+    float: left;
+    font-size: 130%;
+}
+
+#photo{
+    height: 314px;
+    width: 346px;
+    position: absolute;
+    background-color: white;
+    display: none;
+
+     text-align: center;
+}
+#photo img{
+    margin-top: 70px;
+    float: left;
+}
+.p:hover{
+   color: red;
+}
+.p1:hover{
+    color: red;
+}
+#li li:hover{
+    color: red;
+}

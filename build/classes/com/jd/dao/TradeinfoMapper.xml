@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.dao.TradeinfoDao">
+  <resultMap id="BaseResultMap" type="com.jd.entity.Tradeinfo">
+    <id column="TRADENO" jdbcType="DECIMAL" property="TRADENO" />
+    <result column="USERID" jdbcType="DECIMAL" property="USERID" />
+    <result column="TRADETIME" jdbcType="DATE" property="TRADETIME" />
+    <result column="AMOUNT" jdbcType="DECIMAL" property="AMOUNT" />
+    <result column="TOTAL" jdbcType="DECIMAL" property="TOTAL" />
+    <result column="ADDRESSID" jdbcType="DECIMAL" property="ADDRESSID" />
+    <result column="TRADESTATE" jdbcType="VARCHAR" property="TRADESTATE" />
+    <result column="TRADETYPE" jdbcType="VARCHAR" property="TRADETYPE" />
+    <collection property="details" resultMap="DetailsResultMap"/>
+  </resultMap>
+   <resultMap id="DetailsResultMap" type="com.jd.entity.Details">
+    <id column="DETAILSID" jdbcType="DECIMAL" property="DETAILSID" />
+    <result column="COMID" jdbcType="DECIMAL" property="COMID" />
+    <result column="AMOUNT" jdbcType="DECIMAL" property="AMOUNT" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    TRADENO, USERID, TRADETIME, AMOUNT, TOTAL, ADDRESSID, TRADESTATE, TRADETYPE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select t.*,d.TRADENO,d.AMOUNT
+    from JD_TRADEINFO t,JD_DETAILS d
+    where t.TRADENO =d.TRADENO AND t.TRADENO #{TRADENO,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from JD_TRADEINFO
+    where TRADENO = #{TRADENO,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.jd.entity.Tradeinfo">
+    insert into JD_TRADEINFO (TRADENO, USERID, TRADETIME, 
+      AMOUNT, TOTAL, ADDRESSID, 
+      TRADESTATE, TRADETYPE)
+    values (#{TRADENO,jdbcType=DECIMAL}, #{USERID,jdbcType=DECIMAL}, #{TRADETIME,jdbcType=DATE}, 
+      #{AMOUNT,jdbcType=DECIMAL}, #{TOTAL,jdbcType=DECIMAL}, #{ADDRESSID,jdbcType=DECIMAL}, 
+      #{TRADESTATE,jdbcType=VARCHAR}, #{TRADETYPE,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jd.entity.Tradeinfo">
+    insert into JD_TRADEINFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="TRADENO != null">
+        TRADENO,
+      </if>
+      <if test="USERID != null">
+        USERID,
+      </if>
+      <if test="TRADETIME != null">
+        TRADETIME,
+      </if>
+      <if test="AMOUNT != null">
+        AMOUNT,
+      </if>
+      <if test="TOTAL != null">
+        TOTAL,
+      </if>
+      <if test="ADDRESSID != null">
+        ADDRESSID,
+      </if>
+      <if test="TRADESTATE != null">
+        TRADESTATE,
+      </if>
+      <if test="TRADETYPE != null">
+        TRADETYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="TRADENO != null">
+        #{TRADENO,jdbcType=DECIMAL},
+      </if>
+      <if test="USERID != null">
+        #{USERID,jdbcType=DECIMAL},
+      </if>
+      <if test="TRADETIME != null">
+        #{TRADETIME,jdbcType=DATE},
+      </if>
+      <if test="AMOUNT != null">
+        #{AMOUNT,jdbcType=DECIMAL},
+      </if>
+      <if test="TOTAL != null">
+        #{TOTAL,jdbcType=DECIMAL},
+      </if>
+      <if test="ADDRESSID != null">
+        #{ADDRESSID,jdbcType=DECIMAL},
+      </if>
+      <if test="TRADESTATE != null">
+        #{TRADESTATE,jdbcType=VARCHAR},
+      </if>
+      <if test="TRADETYPE != null">
+        #{TRADETYPE,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jd.entity.Tradeinfo">
+    update JD_TRADEINFO
+    <set>
+      <if test="USERID != null">
+        USERID = #{USERID,jdbcType=DECIMAL},
+      </if>
+      <if test="TRADETIME != null">
+        TRADETIME = #{TRADETIME,jdbcType=DATE},
+      </if>
+      <if test="AMOUNT != null">
+        AMOUNT = #{AMOUNT,jdbcType=DECIMAL},
+      </if>
+      <if test="TOTAL != null">
+        TOTAL = #{TOTAL,jdbcType=DECIMAL},
+      </if>
+      <if test="ADDRESSID != null">
+        ADDRESSID = #{ADDRESSID,jdbcType=DECIMAL},
+      </if>
+      <if test="TRADESTATE != null">
+        TRADESTATE = #{TRADESTATE,jdbcType=VARCHAR},
+      </if>
+      <if test="TRADETYPE != null">
+        TRADETYPE = #{TRADETYPE,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where TRADENO = #{TRADENO,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jd.entity.Tradeinfo">
+    update JD_TRADEINFO
+    set USERID = #{USERID,jdbcType=DECIMAL},
+      TRADETIME = #{TRADETIME,jdbcType=DATE},
+      AMOUNT = #{AMOUNT,jdbcType=DECIMAL},
+      TOTAL = #{TOTAL,jdbcType=DECIMAL},
+      ADDRESSID = #{ADDRESSID,jdbcType=DECIMAL},
+      TRADESTATE = #{TRADESTATE,jdbcType=VARCHAR},
+      TRADETYPE = #{TRADETYPE,jdbcType=VARCHAR}
+    where TRADENO = #{TRADENO,jdbcType=DECIMAL}
+  </update>
+</mapper>

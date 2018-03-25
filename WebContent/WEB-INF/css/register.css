@@ -1,0 +1,492 @@
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0px
+}
+
+.ar {
+    text-align: right
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    font-size: 8px;
+}
+
+a:hover {
+    color: #C81623
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+#container {
+    width: 1347px;
+
+}
+
+#header {
+    height: 100px;
+}
+
+.h_left {
+    margin-left: 70px;
+    float: left;
+    margin-top: 22px;
+}
+
+.logo-img {
+    display: inline;
+}
+
+.logo-title {
+    display: inline;
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+    color: #3e3e3e;
+    border-left: solid 1px #DCDCDC;
+    margin: 15px 5px 10px 17px;
+    padding: 6px 10px 6px 25px;
+
+}
+
+.h_right .have-account {
+    font-family: "Microsoft YaHei";
+    float: right;
+
+    color: #999999;
+}
+
+.h_right {
+    margin-right: 90px;
+    margin-top: 60px;
+    float: right;
+}
+
+.have-account a {
+    font-size: 16px;
+    color: #666;
+}
+
+#header {
+    border-bottom: inset 5px #f7f4f7;
+}
+
+.txt {
+    position: absolute;
+    z-index: 2;
+    line-height: 46px;
+    margin-left: 20px;
+    margin-top: 1px;
+    font-size: 14px;
+    font-family: 'Microsoft YaHei', 'Hiragino Sans GB';
+    color: rgb(204, 204, 204);
+    display: inline;
+
+}
+
+#body {
+    margin: 55px auto 60px;
+    width: 830px;
+    height: 623px;
+}
+
+.b_left {
+    width: 400px;
+    display: inline;
+    float: left;
+}
+
+.form-item {
+    position: relative;
+    border: solid 1px #ddd;
+    width: 398px;
+    height: 52px;
+}
+
+.form-item label {
+    font-size: 14px;
+    float: left;
+    width: 90px;
+    height: 42px;
+    line-height: 52px;
+    padding-left: 20px;
+    color: #666;
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+}
+
+#form-account {
+    display:inline;
+    border: hidden;
+    margin-top: 16px;
+    font-size: 14px;
+    margin-left: 25px;
+
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+}
+#form-pwd {
+    display:inline;
+    border: hidden;
+    margin-top: 16px;
+    font-size: 14px;
+    margin-left: 25px;
+
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+}
+#form-equalTopwd{
+    display:inline;
+    border: hidden;
+    margin-top: 16px;
+    font-size: 14px;
+    margin-left: 25px;
+
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+}
+#form-phone{
+    display:inline;
+    border: hidden;
+    margin-top: 16px;
+    font-size: 14px;
+    margin-left: 13px;
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+}
+#authcode{
+    display:inline;
+    border: hidden;
+    margin-top: 16px;
+    font-size: 14px;
+    margin-left: 25px;
+
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+}
+#phonecode{
+    display:inline;
+    border: hidden;
+    margin-top: 16px;
+    font-size: 14px;
+    margin-left: 25px;
+
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+}
+.form-item .i-status {
+    position: absolute;
+    display: none;
+    width: 16px;
+    height: 16px;
+    top: 20px;
+    right: 20px;
+}
+
+.input-tip {
+    color: #c5c5c5;
+    height: 27px;
+    font-size: 12px;
+    padding-top: 5px;
+    width:400px;
+    height: 32px;
+}
+
+
+.orEmail {
+    font-size: 15px;
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+    float: right;
+    margin-top: -30px;
+    color: #666;
+}
+
+.orEmail a {
+    color: dodgerblue;
+    font-size: 15px;
+
+}
+
+.form-item .img-code {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: 110px;
+    height: 46px;
+    cursor: pointer;
+}
+
+.btn-phonecode {
+    float: right;
+    padding: 12px 19px 17px 19px;
+    margin-right: 3px;
+    margin-top: 3px;
+    border: 0px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+
+}
+
+.form-agreen {
+    font-size: 8px;
+    width: 400px;
+    height: 21px;
+}
+
+#protocol {
+    color: dodgerblue;
+}
+.t{
+    float: left;
+    margin-top: 3px;
+}
+.form-agreen input {
+    width: 18px;
+    height: 18px;
+    border: solid 1px #cfd1d3;
+    vertical-align: text-top;
+    padding: 0;
+    margin: 0px;
+    margin-right: 10px;
+    float: left;
+}
+
+.btn-register {
+    width: 100%;
+    height: 54px;
+    color: #fff;
+    background: #e22;
+    border: 0;
+    font-size: 16px;
+    font-family: "Microsoft YaHei", "Hiragino Sans GB";
+    margin-top: 25px;
+}
+
+.b_right {
+    float: left;
+    margin-left: 104px;
+    height: 605px;
+    padding-left: 90px;
+    border-left: solid 1px #e6e6e6;
+    display: inline;
+
+}
+
+.phone-fast-reg {
+    width: 213px;
+    height: 270px;
+
+}
+
+.feedback, .form-item-valid .pppp,.pic, .i-company, .i-def, .i-error, .i-error1, .i-global, .i-info, .i-pwd-medium, .i-pwd-strong, .i-pwd-weak, .i-suc {
+    background: url(//misc.360buyimg.com/user/reg/1.0.0/css/i/icon.png) no-repeat;
+}
+
+.feedback {
+    display: block;
+    width: 33px;
+    height: 135px;
+    background-position: -367px 0;
+}
+
+.company-reg {
+    margin: 50px 30px 30px 28px
+}
+
+.i-company {
+    background-position: 0 -50px;
+    width: 30px;
+    height: 29px;
+}
+
+.company-reg a i {
+    display: inline-block;
+    width: 30px;
+    height: 29px;
+    vertical-align: middle;
+    margin-right: 0px;
+}
+
+span {
+    color: #666;
+    font-family: 'Microsoft YaHei', 'Hiragino Sans GB';
+    font-size: 15px;
+    margin-left: 14px;
+}
+
+span:hover {
+    color: black;
+}
+
+.inter-cust {
+    margin: 30px 30px 0px 28px;
+    padding-top: 30px;
+    border-top: 1px solid #DFDFDF;
+}
+
+.inter-cust a i {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: text-bottom;
+    margin-right: 1px;
+    float: left;
+    margin-top: 7px;
+}
+
+.i-global {
+    background-position: -50px -50px;
+}
+
+.inter-cust a span {
+    display: inline-block;
+}
+
+#regist-form span{
+    margin-left: 7px;
+    font-size: 10px;
+    color: #a2a0a2;
+    font-family: 'Microsoft YaHei', 'Hiragino Sans GB';
+
+}
+.i-def{
+    width: 17px;
+    height: 17px;
+    display:inline;
+    float: left;
+    background-position: 0px -100px;
+}
+
+#footer {
+    height: 118px;
+    font-size: 12px;
+    text-align: center;
+    border-top: solid 1px #e6e6e6;
+    color: #999;
+    padding-bottom: 30px;
+}
+
+#footer .links {
+    padding-top: 30px;
+    padding-bottom: 15px;
+
+}
+
+#footer .links a {
+    color: #999;
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+label.error {
+    color: red;
+    font-size: 10px;
+    width: 400px;
+    height: 27px;
+    background: url("../images/-.png") no-repeat 0px 0px;
+
+}
+.pic{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    float: left;
+    display: inline;
+    background-position: -17px -100px;
+
+}
+#select-country{
+    border-right: 1px solid #DFDFDF;
+
+    width: 110px;
+    height: 52px;
+}
+.arrow {
+    background: url(//misc.360buyimg.com/user/reg/1.0.0/css/i/icon.png) no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-top: 15px;
+    margin-right: 5px;
+    background-position: -2px -151px;
+    float: right;
+}
+.select{
+    width: 155px;
+    height: 321px;
+    background-color: white;
+    float: left;
+    position: absolute;
+    z-index: 5;
+    overflow-y:auto;
+    overflow-x: hidden;
+    visibility: visible;
+    border-bottom: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+}
+
+ .overview {
+    list-style: none;
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+.phone-suggest {
+    width: 145px;
+    border-left: solid 1px #ccc;
+    background: #fff;
+    border-bottom: none;
+    z-index: 11;
+}
+.phone-suggest li {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    color: #666;
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+
+}
+.suggest-container li {
+    cursor: pointer;
+}
+/*.scrollbar {
+    right: 28px;
+    z-index: 11;
+    background: transparent url(//misc.360buyimg.com/user/reg/1.0.0/widget/personal-reg/i/bg-scrollbar-track-y.png) no-repeat 0 0;
+    position: absolute;
+    background-position: 0 0;
+    float: right;
+    width: 15px;
+}*/
+/*
+.track {
+    background: transparent url(//misc.360buyimg.com/user/reg/1.0.0/widget/personal-reg/i/bg-scrollbar-trackend-y.png) no-repeat 0 100%;
+    height: 100%;
+    width: 13px;
+    position: absolute;
+    padding: 0 1px;
+}
+ .thumb {
+    background: transparent url(//misc.360buyimg.com/user/reg/1.0.0/widget/personal-reg/i/bg-scrollbar-thumb-y.png) no-repeat 50% 100%;
+    height: 20px;
+    width: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: -9px;
+}
+ .thumb .end {
+    background: transparent url(//misc.360buyimg.com/user/reg/1.0.0/widget/personal-reg/i/bg-scrollbar-thumb-y.png) no-repeat 50% 0;
+    overflow: hidden;
+    height: 5px;
+    width: 25px;
+}*/
+.value{
+
+    display: inline;
+}
